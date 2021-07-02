@@ -10,6 +10,7 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 use App\Notifications\UserActivate;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
+use DB;
 
 
 class RegisterController extends Controller
@@ -78,7 +79,27 @@ class RegisterController extends Controller
             'token' => str_random(30).time(),
         ]);
 
-        $user->notify(new UserActivate($user));
+
+        /**
+         * 
+         * !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+         * need to fix this bug, cannot send the email through gmail 
+         * 
+         * 
+         * 
+         * 
+         */
+        //$user->notify(new UserActivate($user));
+
+        // need to remove this after fix the bug on the top
+        $user->update(['active' => User::ACTIVE]);
+
+        $id = $user->id;
+
+        $value = array('user_id' => $id, 'default' => 'Yes');
+        
+        DB::table('address')->insert($value);
+        DB::table('contact')->insert($value);
 
         return $user;
     }

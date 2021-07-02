@@ -21,3 +21,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('activate/{token}', 'Auth\RegisterController@activate')
     ->name('activate');
+
+
+Route::patch('/update',  'UserInfoController@update')->name('update');

@@ -4,20 +4,23 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class address extends Model
+class contact extends Model
 {
-    protected $table = 'address';
-    
+
+    protected $table = 'contact';
+
     public function user()
     {
         return $this->belongsTo('\App\User', 'id');
     }
 
     protected $fillable = [
-        'firstname','type','streetaddress','city','province','country','postalcode',
+        'type','value',
     ];
+
 
     protected $hidden = [
         'user_id', 'default',
     ];
+
 }

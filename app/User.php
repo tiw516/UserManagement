@@ -12,6 +12,16 @@ class User extends Authenticatable
     const ACTIVE = 1;
     const INACTIVE = 0;
 
+    public function Address()
+    {
+        return $this->hasOne('App\address');
+    }
+
+    public function Contact()
+    {
+        return $this->hasOne('App\contact');
+    }
+
     /**
      * The attributes that are mass assignable.
      *

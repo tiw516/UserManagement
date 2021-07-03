@@ -83,7 +83,7 @@ class RegisterController extends Controller
         /**
          * 
          * !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-         * need to fix this bug, cannot send the email through gmail 
+         * need to fix this bug, why gmail cannot receive notification email 
          * 
          * 
          * 
@@ -93,7 +93,9 @@ class RegisterController extends Controller
 
         // need to remove this after fix the bug on the top
         $user->update(['active' => User::ACTIVE]);
+        /****************************************************************** */
 
+        
         $id = $user->id;
 
         $value = array('user_id' => $id, 'default' => 'Yes');

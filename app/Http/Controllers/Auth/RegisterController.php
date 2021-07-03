@@ -83,7 +83,7 @@ class RegisterController extends Controller
         /**
          * 
          * !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-         * need to fix this bug, why gmail cannot receive notification email 
+         * before using this set the gmail address and password first 
          * 
          * 
          * 

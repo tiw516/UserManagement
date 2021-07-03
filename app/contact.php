@@ -15,12 +15,12 @@ class contact extends Model
     }
 
     protected $fillable = [
-        'type','value',
+        'user_id','type','value',
     ];
 
 
     protected $hidden = [
-        'user_id', 'default',
+        'default',
     ];
 
 }

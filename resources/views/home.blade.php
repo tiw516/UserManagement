@@ -21,7 +21,15 @@
                     @endif
 
                     Hi {{Auth::user()->username}}, welcome!
+
+                    <div class="text-right btn float-right"><a href="{{ URL::route('disable') }}">
+                        <button type="button" class="btn btn-danger">
+                            Disable my account!
+                        </button></a>
+                    </div>
+                
                 </div>
+
                 
                 
                 <div class="card-body">

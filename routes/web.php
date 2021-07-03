@@ -24,3 +24,5 @@ Route::get('activate/{token}', 'Auth\RegisterController@activate')
 
 
 Route::patch('/update',  'UserInfoController@update')->name('update');
+
+Route::get('/disable', 'UserInfoController@disable')->name('disable');

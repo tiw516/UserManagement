@@ -54,4 +54,14 @@ class UserInfoController extends Controller
 
         return back()->with('message', 'Your Profile Updated!');
     }
+
+    public function disable()
+    {
+        $user = Auth::user();
+        $user->active = '0';
+        $user->save();
+        auth()->logout();
+        return redirect('/home');
+    }
+
 }

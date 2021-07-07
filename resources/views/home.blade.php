@@ -8,14 +8,6 @@
                 <div class="card-header">Dashboard</div>
 
                 <div class="card-body">
-                    @if(auth()->user()->ifadmin == 1)
-                    <a href="{{url('admin/routes')}}">Admin</a>
-                    @else
-                    <div class="panel-heading">Normal User</div>
-                    @endif
-                </div>
-
-                <div class="card-body">
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
                             {{ session('status') }}
@@ -36,7 +28,14 @@
                             Disable my account!
                         </button></a>
                     </div>
+                    @else
+                    <div class="text-right btn float-right"><a href="{{url('admin/routes')}}">
+                        <button type="button" class="btn btn-info">
+                        Admin Panel!
+                        </button></a>
+                    </div>
                     @endif
+
                 
                 </div>
 

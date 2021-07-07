@@ -23,8 +23,7 @@
                         <tr>
                         <th scope="col col-md-2">User Name</th>
                         <th scope="col col-md-2">Email Address</th>
-                        <th scope="col col-md-2">Status</th>
-                        <th scope="col col-md-10">Action</th>
+                        <th scope="col col-md-2">Status</th>                       
                         </tr>
                         </thead>
 

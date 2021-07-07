@@ -89,9 +89,9 @@ class RegisterController extends Controller
          * 
          * 
          */
-        //$user->notify(new UserActivate($user));
-
-        // need to remove this after fix the bug on the top
+        
+         //$user->notify(new UserActivate($user));
+        // use the up line after set up the gmail
         $user->update(['active' => User::ACTIVE]);
         /****************************************************************** */
 

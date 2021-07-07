@@ -6,6 +6,7 @@ class UserSeeder extends Seeder
 {
     /**
      * Run the database seeds.
+     * create the first user as admin user
      *
      * @return void
      */
@@ -17,6 +18,7 @@ class UserSeeder extends Seeder
                 'email' => 'admin@example.com',
                 'password' => Hash::make('admin12345'),
                 'active' => '1',
+                'ifadmin' => '1',
             ],
             
         ]);

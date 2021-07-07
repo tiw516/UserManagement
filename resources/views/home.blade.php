@@ -8,6 +8,14 @@
                 <div class="card-header">Dashboard</div>
 
                 <div class="card-body">
+                    @if(auth()->user()->ifadmin == 1)
+                    <a href="{{url('admin/routes')}}">Admin</a>
+                    @else
+                    <div class="panel-heading">Normal User</div>
+                    @endif
+                </div>
+
+                <div class="card-body">
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
                             {{ session('status') }}
@@ -22,11 +30,13 @@
 
                     Hi {{Auth::user()->username}}, welcome!
 
+                    @if(auth()->user()->ifadmin == 0)
                     <div class="text-right btn float-right"><a href="{{ URL::route('disable') }}">
                         <button type="button" class="btn btn-danger">
                             Disable my account!
                         </button></a>
                     </div>
+                    @endif
                 
                 </div>
 

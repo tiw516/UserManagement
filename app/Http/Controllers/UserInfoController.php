@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Auth;
+use DB;
 
 class UserInfoController extends Controller
 {
@@ -62,6 +63,23 @@ class UserInfoController extends Controller
         $user->save();
         auth()->logout();
         return redirect('/home');
+    }
+
+    public function disableOne($userid)
+    {
+        $user = DB::table('users')->where('id', $userid)->value('active');
+        if ($user == 0){
+            $user = DB::table('users')->where('id', $userid)->update(['active' => 1]);
+        }else{
+            $user = DB::table('users')->where('id', $userid)->update(['active' => 0]);
+        }
+        return back()->with('message', 'User is Updated!');
+    }
+
+    public function deleteOne($userid)
+    {
+        DB::table('users')->where('id', $userid)->delete();
+        return back()->with('message', 'User is Updated!');
     }
 
 }

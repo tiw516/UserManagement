@@ -27,4 +27,8 @@ Route::patch('/update',  'UserInfoController@update')->name('update');
 
 Route::get('/disable', 'UserInfoController@disable')->name('disable');
 
+Route::get('/disableOne/{id}', 'UserInfoController@disableOne')->name('disableOne');
+
+Route::get('/deleteOne/{id}', 'UserInfoController@deleteOne')->name('deleteOne');
+
 Route::get('admin/routes', 'HomeController@admin')->middleware('admin');
